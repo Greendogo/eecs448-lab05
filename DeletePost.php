@@ -5,34 +5,36 @@
   </HEAD>
   <BODY>
     <div class="delete-menu">
-<?php
-$mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelroy");
+      <div class="interior">
+        <?php
+        $mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelroy");
 
-if ($mysqldatabase->connect_errno) {
-    $error = $mysqldatabase->connect_error;
-    $message = "Connect failed: " . $error;
-    echo "<div class='error'>" . $message .  "<br>";
-    echo "<br><a href='AdminHome.html'>Admin Menu</a>";
-    exit();
-}
+        if ($mysqldatabase->connect_errno) {
+            $error = $mysqldatabase->connect_error;
+            $message = "Connect failed: " . $error;
+            echo "<div class='error'>" . $message .  "<br>";
+            echo "<br><a href='AdminHome.html'>Admin Menu</a>";
+            exit();
+        }
 
-$post_form = $_POST['post_form'];
-$num = count($post_form);
-if($num > 0) {
-  foreach($post_form as $ids)
-  {
-   $delete_query = "DELETE FROM Posts WHERE post_id='" . $ids . "'";
-   $mysqldatabase->query($delete_query);
-   echo "Post #" . $ids . " deleted!<br>";
-  }
-}
-else {
-  echo "No posts delete!<br>";
-}
-echo "<a href='DeletePost.html'>Back</a>";
-echo "<br><a href='AdminHome.html'>Admin Menu</a>";
-$mysqldatabase ->close();
-?>
-</div>
+        $post_form = $_POST['post_form'];
+        $num = count($post_form);
+        if($num > 0) {
+          foreach($post_form as $ids)
+          {
+           $delete_query = "DELETE FROM Posts WHERE post_id='" . $ids . "'";
+           $mysqldatabase->query($delete_query);
+           echo "Post #" . $ids . " deleted!<br>";
+          }
+        }
+        else {
+          echo "No posts delete!<br>";
+        }
+        echo "<a href='DeletePost.html'>Back</a>";
+        echo "<br><a href='AdminHome.html'>Admin Menu</a>";
+        $mysqldatabase ->close();
+        ?>
+      </div>
+    </div>
 </BODY>
 </HTML>

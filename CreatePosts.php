@@ -43,9 +43,13 @@ echo
     <TITLE>Create Post Result</TITLE>
   </HEAD>
   <BODY>
-    <div class='" . $color . "'>" . $message .  "<br>
-    <a href='CreatePosts.html'>Back</a><br>
-    <a href='forum-index.html'>Return to Forum Index</a>
+    <div class='" . $color . "'>
+      <div class='interior'>
+        " . $message .  "
+        <br>
+        <a href='CreatePosts.html'>Back</a><br>
+        <a href='forum-index.html'>Return to Forum Index</a>
+      </div>
     </div>
   </BODY>
 </HTML>";

@@ -6,40 +6,44 @@
   <BODY>
 
     <div class="view-user-post">
-      <h1>View Posts By User</h1>
-      Select User:<br>
-        <?php
-        $mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelroy");
+      <div class="interior">
+        <h1>View Posts By User</h1>
+        Select User:<br>
+          <?php
+          $mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelroy");
 
-        if ($mysqldatabase->connect_errno) {
-            $error = $mysqldatabase->connect_error;
-            $message = "Connect failed: " . $error;
-            echo "<div class='error'>" . $message .  "<br>";
-            echo "<a href='AdminHome.html'>Admin Menu</a>";
-            exit();
-        }
-
-        $result = $mysqldatabase->query("SELECT * FROM Users");
-        $array = mysqli_fetch_all($result, MYSQLI_NUM);
-        $num_users = mysqli_num_rows($result);
-        if($num_users > 0) {
-          echo "<form method='post' action='ViewUserPosts.php'>";
-          echo "<select name='username' id='username' onchange='this.form.submit()'>";
-          echo "<option value=''>Select a Username</option>";
-          foreach($array as $row) {
-            foreach($row as $username) {
-              echo '<option value="' . $username . '">' . $username . '</option>';
-            }
+          if ($mysqldatabase->connect_errno) {
+              $error = $mysqldatabase->connect_error;
+              $message = "Connect failed: " . $error;
+              echo "<div class='error'>" . $message .  "<br>";
+              echo "<a href='AdminHome.html'>Admin Menu</a>";
+              exit();
           }
-          echo "</select>";
-          echo "</form>";
-        }
-        else {
-          echo "Users table empty!\n";
-        }
-        echo "<a href='AdminHome.html'>Admin Menu</a>";
-        $mysqldatabase ->close();
-        ?>
+
+          $result = $mysqldatabase->query("SELECT * FROM Users");
+          $array = mysqli_fetch_all($result, MYSQLI_NUM);
+          $num_users = mysqli_num_rows($result);
+          if($num_users > 0) {
+            echo "<form method='post' action='ViewUserPosts.php'>";
+            echo "<select name='username' id='username'>";
+            echo "<option value=''>Select a Username</option>";
+            foreach($array as $row) {
+              foreach($row as $username) {
+                echo '<option value="' . $username . '">' . $username . '</option>';
+              }
+            }
+
+            echo "</select>";
+            echo '<br><br><input type="submit" name="submit" value="Submit">';
+            echo "</form>";
+          }
+          else {
+            echo "Users table empty!\n";
+          }
+          echo "<a href='AdminHome.html'>Admin Menu</a>";
+          $mysqldatabase ->close();
+          ?>
+    </div>
   </div>
   </BODY>
 </HTML>

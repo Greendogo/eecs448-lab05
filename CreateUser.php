@@ -34,9 +34,11 @@ echo
     <TITLE>Create User Result</TITLE>
   </HEAD>
   <BODY>
-    <div class='" . $color . "'>" . $message .  "<br>
-    <a href='CreateUser.html'>Back</a><br>
-    <a href='forum-index.html'>Forum Index</a>
+    <div class='" . $color . "'>
+      <div class='interior'>" . $message .  "<br>
+        <a href='CreateUser.html'>Back</a><br>
+        <a href='forum-index.html'>Forum Index</a>
+      </div>
     </div>
   </BODY>
 </HTML>";

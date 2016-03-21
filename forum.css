@@ -37,7 +37,7 @@
 }
 
 .post-submit {
-  text-align: center;
+  text-align: left;
 }
 
 .admin-menu {
@@ -87,4 +87,8 @@
 .error {
   text-align: center;
   color: red;
+}
+
+.interior {
+  margin: 5%;
 }
