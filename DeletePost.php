@@ -11,7 +11,8 @@ $mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelr
 if ($mysqldatabase->connect_errno) {
     $error = $mysqldatabase->connect_error;
     $message = "Connect failed: " . $error;
-    $color = "red-style";
+    echo "<div class='error'>" . $message .  "<br>";
+    echo "<br><a href='AdminHome.html'>Admin Menu</a>";
     exit();
 }
 

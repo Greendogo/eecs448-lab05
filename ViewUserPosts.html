@@ -14,7 +14,8 @@
         if ($mysqldatabase->connect_errno) {
             $error = $mysqldatabase->connect_error;
             $message = "Connect failed: " . $error;
-            echo $message;
+            echo "<div class='error'>" . $message .  "<br>";
+            echo "<a href='AdminHome.html'>Admin Menu</a>";
             exit();
         }
 

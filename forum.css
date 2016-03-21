@@ -83,3 +83,8 @@
   margin-left: 36%;
   margin-right: 36%;
 }
+
+.error {
+  text-align: center;
+  color: red;
+}
