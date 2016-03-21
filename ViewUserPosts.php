@@ -42,7 +42,7 @@ else {
     echo "</table>";
   }
   else {
-    echo "Users table empty!\n";
+    echo "User " . $author . " has no posts!\n";
   }
 }
 echo "<br><a href='ViewUserPosts.html'>Back</a><br>";
