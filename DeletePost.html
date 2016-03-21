@@ -1,0 +1,49 @@
+<HTML>
+  <HEAD>
+    <link rel="stylesheet" type="text/css" href="forum.css">
+    <TITLE>Delete Posts</TITLE>
+  </HEAD>
+  <BODY>
+    <div class="delete-menu">
+      <h1>Delete Posts Menu</h1>
+      Select Posts to Delete:<br>
+      <?php
+      $mysqldatabase = new mysqli("mysql.eecs.ku.edu", "pmcelroy", "callisto", "pmcelroy");
+
+      if ($mysqldatabase->connect_errno) {
+          $error = $mysqldatabase->connect_error;
+          $message = "Connect failed: " . $error;
+          $color = "red-style";
+          exit();
+      }
+
+      $result = $mysqldatabase->query("SELECT * FROM Posts");
+      $array = mysqli_fetch_all($result, MYSQLI_NUM);
+      $num_posts = mysqli_num_rows($result);
+      if($num_posts > 0) {
+        echo "<form method='post' action='DeletePost.php'>";
+        echo "<table align='center' style='border: 1px solid gray; border-collapse: collapse;'>";
+          echo "<tr style='border: 1px solid gray;text-align: center;'>";
+            echo "<th style='border: 1px solid gray;text-align: center;'>Post Author</th>";
+            echo "<th style='border: 1px solid gray;text-align: center;'>Post Content</th>";
+            echo "<th style='border: 1px solid gray;text-align: center;'>Delete</th>";
+        foreach($array as $row) {
+              echo "<tr style='border: 1px solid gray;text-align: center;'>";
+                    echo "<td class='headers' style='border: 1px solid gray;'>" . $row[2] . "</td>";
+                    echo "<td class='headers' style='border: 1px solid gray;'>" . $row[1] . "</td>";
+          echo "<td class='headers' style='border: 1px solid gray;'><input type='checkbox' name='post_form[]' value='" . $row[0] . "'></td>";
+          echo "</tr>";
+        }
+        echo "</table>";
+        echo "<input type='submit'>";
+        echo "</form>";
+      }
+      else {
+        echo "No Posts!\n";
+      }
+      echo "<br><a href='AdminHome.html'>Admin Menu</a>";
+      ?>
+
+  </div>
+  </BODY>
+</HTML>

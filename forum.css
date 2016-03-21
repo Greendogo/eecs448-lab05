@@ -1,0 +1,85 @@
+.username-submit {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
+.red-style {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+  color: red;
+}
+
+.black-style {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+  color: black;
+}
+
+.post-body {
+  border-style: inset;
+  border-width: 2px;
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
+.post-submit {
+  text-align: center;
+}
+
+.admin-menu {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+.forum-menu {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
+.delete-menu {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
+.view-user-post {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
+
+.view-users {
+  border-style: inset;
+  border-width: 2px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 36%;
+  margin-right: 36%;
+}
