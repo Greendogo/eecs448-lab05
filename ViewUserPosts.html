@@ -24,6 +24,7 @@
         if($num_users > 0) {
           echo "<form method='post' action='ViewUserPosts.php'>";
           echo "<select name='username' id='username' onchange='this.form.submit()'>";
+          echo "<option value=''>Select a Username</option>";
           foreach($array as $row) {
             foreach($row as $username) {
               echo '<option value="' . $username . '">' . $username . '</option>';
@@ -36,6 +37,7 @@
           echo "Users table empty!\n";
         }
         echo "<a href='AdminHome.html'>Admin Menu</a>";
+        $mysqldatabase ->close();
         ?>
   </div>
   </BODY>

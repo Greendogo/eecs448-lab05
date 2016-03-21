@@ -30,6 +30,7 @@ else {
 }
 echo "<a href='DeletePost.html'>Back</a>";
 echo "<br><a href='AdminHome.html'>Admin Menu</a>";
+$mysqldatabase ->close();
 ?>
 </div>
 </BODY>

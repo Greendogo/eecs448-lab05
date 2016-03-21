@@ -34,6 +34,7 @@
    echo "Users table empty!\n";
  }
  echo "<br><a href='AdminHome.html'>Admin Menu</a>";
+ $mysqldatabase ->close();
 ?>
 </div>
 </body>
